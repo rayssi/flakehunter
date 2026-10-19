@@ -32,10 +32,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-name/flakehunter"
-Documentation = "https://github.com/your-name/flakehunter#readme"
-Changelog = "https://github.com/your-name/flakehunter/blob/main/CHANGELOG.md"
-Issues = "https://github.com/your-name/flakehunter/issues"
+Homepage = "https://github.com/rayssi/flakehunter"
+Documentation = "https://github.com/rayssi/flakehunter#readme"
+Changelog = "https://github.com/rayssi/flakehunter/blob/main/CHANGELOG.md"
+Issues = "https://github.com/rayssi/flakehunter/issues"
 
 [project.scripts]
 flakehunter = "flakehunter.cli:main"

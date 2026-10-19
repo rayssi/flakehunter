@@ -5,7 +5,7 @@ Thanks for helping! Bug reports, ideas and pull requests are all welcome.
 ## Set up
 
 ```bash
-git clone https://github.com/your-name/flakehunter.git
+git clone https://github.com/rayssi/flakehunter.git
 cd flakehunter
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate

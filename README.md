@@ -1,9 +1,9 @@
 # FlakeHunter
 
-[![CI](https://github.com/your-name/flakehunter/actions/workflows/ci.yml/badge.svg)](https://github.com/your-name/flakehunter/actions/workflows/ci.yml)
+[![CI](https://github.com/rayssi/flakehunter/actions/workflows/ci.yml/badge.svg)](https://github.com/rayssi/flakehunter/actions/workflows/ci.yml)
 [![PyPI](https://img.shields.io/pypi/v/flakehunter)](https://pypi.org/project/flakehunter/)
 [![Python](https://img.shields.io/pypi/pyversions/flakehunter)](https://pypi.org/project/flakehunter/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://github.com/your-name/flakehunter/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://github.com/rayssi/flakehunter/blob/main/LICENSE)
 
 FlakeHunter reads the history of your Allure results and tells you, on every GitLab pipeline:
 
@@ -14,7 +14,7 @@ FlakeHunter reads the history of your Allure results and tells you, on every Git
 
 No more downloading the history and running scripts locally: everything happens in the GitLab job.
 
-![FlakeHunter report](https://raw.githubusercontent.com/your-name/flakehunter/main/docs/report.png)
+![FlakeHunter report](https://raw.githubusercontent.com/rayssi/flakehunter/main/docs/report.png)
 
 ## Why another tool?
 
@@ -80,7 +80,7 @@ flakehunter_uat:
     expire_in: 30 days
 ```
 
-A full example with several environments is in [`examples/gitlab-ci.yml`](https://github.com/your-name/flakehunter/blob/main/examples/gitlab-ci.yml).
+A full example with several environments is in [`examples/gitlab-ci.yml`](https://github.com/rayssi/flakehunter/blob/main/examples/gitlab-ci.yml).
 
 ## Use it locally
 
@@ -141,8 +141,8 @@ flakehunter analyze --history demo/results-history --env DEMO
 
 ## Development
 
-See [CONTRIBUTING.md](https://github.com/your-name/flakehunter/blob/main/CONTRIBUTING.md) to set up the project and run the checks.
-Changes are listed in [CHANGELOG.md](https://github.com/your-name/flakehunter/blob/main/CHANGELOG.md).
+See [CONTRIBUTING.md](https://github.com/rayssi/flakehunter/blob/main/CONTRIBUTING.md) to set up the project and run the checks.
+Changes are listed in [CHANGELOG.md](https://github.com/rayssi/flakehunter/blob/main/CHANGELOG.md).
 
 ## Roadmap
 

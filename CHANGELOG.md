@@ -21,5 +21,5 @@ and the project uses [Semantic Versioning](https://semver.org/).
   `summary.json` (schema version 1).
 - `--fail-on` option to fail the job on broken or flaky tests.
 
-[Unreleased]: https://github.com/your-name/flakehunter/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/your-name/flakehunter/releases/tag/v0.1.0
+[Unreleased]: https://github.com/rayssi/flakehunter/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/rayssi/flakehunter/releases/tag/v0.1.0

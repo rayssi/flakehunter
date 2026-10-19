@@ -4,6 +4,7 @@
 [![PyPI](https://img.shields.io/pypi/v/flakehunter)](https://pypi.org/project/flakehunter/)
 [![Python](https://img.shields.io/pypi/pyversions/flakehunter)](https://pypi.org/project/flakehunter/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://github.com/rayssi/flakehunter/blob/main/LICENSE)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/rayssi/flakehunter/badge)](https://scorecard.dev/viewer/?uri=github.com/rayssi/flakehunter)
 
 FlakeHunter reads the history of your Allure results and tells you, on every GitLab pipeline:
 
@@ -138,6 +139,8 @@ flakehunter analyze --history demo/results-history --env DEMO
 - **Read-only.** It reads your results history and only writes to its own output folder.
   Archives are read in memory and never extracted to disk.
 - **Safe report.** Test names and error messages are escaped in the HTML report.
+
+To report a vulnerability, see [SECURITY.md](https://github.com/rayssi/flakehunter/blob/main/SECURITY.md).
 
 ## Development
 

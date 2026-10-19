@@ -1,0 +1,10 @@
+version: 2
+updates:
+  # Keeps the GitHub Actions above up to date (FlakeHunter itself has no dependencies).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      github-actions:
+        patterns: ["*"]

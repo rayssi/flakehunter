@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tools
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# FlakeHunter outputs and demo data
+flakehunter-report/
+results-history/
+demo/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store

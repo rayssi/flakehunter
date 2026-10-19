@@ -1,0 +1,129 @@
+:root {
+  color-scheme: light;
+  --bg: #f3f5f7;
+  --ink: #1d2733;
+  --muted: #5a6876;
+  --line: #d8dfe6;
+  --pass: #2e8a60;
+  --fail: #cf4040;
+  --retry: #d18b20;
+  --accent: #2f5d8a;
+  --empty: #c6d0da;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #121820;
+    --ink: #e2e8ee;
+    --muted: #97a4b1;
+    --line: #2b3642;
+    --pass: #4cb383;
+    --fail: #ec6a6a;
+    --retry: #e6ad4c;
+    --accent: #82aad6;
+    --empty: #3a4652;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px/1.55 ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+main { max-width: 1120px; margin: 0 auto; padding: 40px 24px 64px; }
+.context { margin: 0 0 10px; color: var(--muted); }
+h1 {
+  margin: 0;
+  max-width: 28ch;
+  font-size: clamp(1.6rem, 3.4vw, 2.5rem);
+  line-height: 1.15;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+.period { margin: 14px 0 0; color: var(--muted); max-width: 72ch; }
+section { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 6px; font-size: 1.15rem; font-weight: 650; }
+h3 { margin: 28px 0 8px; font-size: 1rem; font-weight: 650; }
+.count { margin-left: 6px; color: var(--muted); font-weight: 500; }
+.lead { margin: 0 0 16px; color: var(--muted); max-width: 72ch; }
+.empty { margin: 6px 0 0; color: var(--muted); }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { padding: 9px 14px 9px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { color: var(--muted); font-size: 0.84rem; font-weight: 600; white-space: nowrap; }
+.num { text-align: right; white-space: nowrap; }
+.test { min-width: 220px; max-width: 460px; font-weight: 600; overflow-wrap: anywhere; }
+.full-name { display: block; color: var(--muted); font-size: 0.8rem; font-weight: 400; }
+.detail { display: block; margin-top: 2px; color: var(--muted); font-weight: 400; }
+.error {
+  display: block;
+  margin-top: 4px;
+  color: var(--fail);
+  font: 0.8rem/1.45 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+.strip { display: inline-flex; gap: 2px; height: 22px; vertical-align: middle; }
+.cell { width: 8px; border-radius: 2px; background: var(--empty); }
+.cell-P { background: var(--pass); }
+.cell-F { background: var(--fail); }
+.cell-R { background: var(--retry); }
+.legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 0 0 14px; color: var(--muted); font-size: 0.85rem; }
+.legend span[class]::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  margin-right: 6px;
+  border-radius: 2px;
+  vertical-align: -2px;
+}
+.legend .l-P::before { background: var(--pass); }
+.legend .l-F::before { background: var(--fail); }
+.legend .l-R::before { background: var(--retry); }
+.up { color: var(--fail); font-weight: 600; }
+.cat { white-space: nowrap; }
+.cat::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--empty);
+}
+.cat-broken::before, .cat-always_failing::before { background: var(--fail); }
+.cat-flaky::before { background: var(--retry); }
+.cat-watch::before { background: var(--accent); }
+.cat-stable::before { background: var(--pass); }
+.chart { display: block; width: 100%; height: 120px; }
+.bar { fill: var(--empty); }
+.bar-last { fill: var(--accent); }
+.chart-scale { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.8rem; margin-top: 6px; }
+.filter { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 6px 0 4px; }
+.filter input {
+  width: min(360px, 100%);
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+}
+.filter input:focus-visible, th button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+th button { all: unset; cursor: pointer; }
+th[aria-sort="ascending"] button::after { content: " ▲"; font-size: 0.7em; }
+th[aria-sort="descending"] button::after { content: " ▼"; font-size: 0.7em; }
+details { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); }
+summary { cursor: pointer; color: var(--ink); font-weight: 600; }
+details p { max-width: 72ch; }
+footer { margin-top: 28px; color: var(--muted); font-size: 0.85rem; }
+@media (max-width: 640px) {
+  main { padding: 28px 16px 48px; }
+  .test { min-width: 180px; }
+}

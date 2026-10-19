@@ -1,0 +1,43 @@
+# =============================================================================
+# FlakeHunter: add this next to your generate_allure_report_<env> job
+# =============================================================================
+# The job reads results-history/ (passed on as an artifact by the report job),
+# prints the summary in its log and publishes the HTML report as an artifact.
+# It never fails the pipeline, unless you add --fail-on.
+
+.flakehunter:
+  stage: report
+  image: python:3.12-slim
+  variables:
+    PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  script:
+    # Until the package is on PyPI: pip install ./tools/flakehunter
+    - pip install --quiet flakehunter
+    - flakehunter analyze --history results-history --env "$TEST_ENV"
+  artifacts:
+    when: always
+    expose_as: "FlakeHunter"     # direct link in the merge request
+    paths:
+      - flakehunter-report/
+    expire_in: 30 days
+
+flakehunter_uat:
+  extends: .flakehunter
+  needs:
+    - job: generate_allure_report_uat
+      artifacts: true
+  rules:
+    - if: $TEST_ENV == "UAT"
+      when: always
+    - when: never
+
+# Another environment? Copy the block and rename the job:
+# flakehunter_preprod:
+#   extends: .flakehunter
+#   needs:
+#     - job: generate_allure_report_preprod
+#       artifacts: true
+#   rules:
+#     - if: $TEST_ENV == "PREPROD"
+#       when: always
+#     - when: never
